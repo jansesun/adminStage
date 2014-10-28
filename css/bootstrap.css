@@ -910,7 +910,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #0158bb;
   text-decoration: none;
 }
 a:hover,
@@ -1217,6 +1217,7 @@ a.bg-danger:hover {
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #eee;
+  font-size:30px;
 }
 ul,
 ol {

@@ -1,3 +1,53 @@
+.gray-darker {
+  color: #222222;
+}
+.gray-dark {
+  color: #333333;
+}
+.gray {
+  color: #555555;
+}
+.gray-light {
+  color: #999999;
+}
+.gray-lighter {
+  color: #eeeeee;
+}
+.gray-lightest {
+  color: #f8f8f8;
+}
+.brand-primary {
+  color: #428bca;
+}
+.brand-success {
+  color: #5cb85c;
+}
+.brand-info {
+  color: #5bc0de;
+}
+.brand-warning {
+  color: #ee3128;
+}
+.brand-danger {
+  color: #d9534f;
+}
+.tx_yh {
+  font-family: Microsoft Yahei;
+}
+.sidebar .nav > li > a {
+  font-size: 18px;
+}
+.sidebar .nav-second-level li a {
+  font-size: 14px;
+}
+.sidebar .arrow {
+  margin-top: 4px;
+}
+.icoplace {
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+}
 body {
   background-color: #f8f8f8;
 }
@@ -87,7 +137,7 @@ body {
   border-bottom: none !important;
 }
 .sidebar .nav-second-level li a {
-  padding-left: 37px;
+  padding-left: 55px;
 }
 .sidebar .nav-third-level li a {
   padding-left: 52px;
@@ -120,7 +170,7 @@ body {
   color: #5bc0de;
 }
 .btn-warning.btn-outline {
-  color: #f0ad4e;
+  color: #ee3128;
 }
 .btn-danger.btn-outline {
   color: #d9534f;
@@ -259,16 +309,16 @@ table.dataTable thead .sorting:after {
   color: #b52b27;
 }
 .panel-yellow {
-  border-color: #f0ad4e;
+  border-color: #ee3128;
 }
 .panel-yellow .panel-heading {
-  border-color: #f0ad4e;
+  border-color: #ee3128;
   color: white;
-  background-color: #f0ad4e;
+  background-color: #ee3128;
 }
 .panel-yellow a {
-  color: #f0ad4e;
+  color: #ee3128;
 }
 .panel-yellow a:hover {
-  color: #df8a13;
+  color: #bb170f;
 }
