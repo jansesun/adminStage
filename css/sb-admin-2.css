@@ -34,6 +34,9 @@
 .tx_yh {
   font-family: Microsoft Yahei;
 }
+.tx_r {
+  text-align: right;
+}
 .sidebar .nav > li > a {
   font-size: 18px;
   font-family: Microsoft Yahei;
@@ -47,6 +50,8 @@
 .icoplace {
   width: 40px;
   display: inline-block;
+  *display: inline;
+  *zoom: 1;
   text-align: center;
 }
 body {
