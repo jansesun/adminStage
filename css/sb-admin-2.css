@@ -37,12 +37,15 @@
 .tx_r {
   text-align: right;
 }
+.mt10 {
+  margin-top: 10px;
+}
 .sidebar .nav > li > a {
-  font-size: 18px;
+  font-size: 16px;
   font-family: Microsoft Yahei;
 }
 .sidebar .nav-second-level li a {
-  font-size: 14px;
+  font-size: 12px;
 }
 .sidebar .arrow {
   margin-top: 4px;

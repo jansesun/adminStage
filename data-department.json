@@ -1,0 +1,16 @@
+{
+  "data": [
+    [
+      "多媒体事业部",
+      "<select class='form-control'><option>组织结构树</option></select>",
+      "备注信息",
+      "<a href='###'>保存</a> <a href='###'>删除</a>"
+    ],
+    [
+      "多媒体事业部",
+      "<select class='form-control'><option>组织结构树</option></select>",
+      "备注信息",
+      "<a href='###'>保存</a> <a href='###'>删除</a>"
+    ]
+  ]
+}
