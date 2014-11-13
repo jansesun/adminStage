@@ -144,6 +144,7 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#person-import" data-toggle="tab">导入人员</a></li>
                 <li><a href="#person-add" data-toggle="tab">添加人员</a></li>
+                <li><a href="#person-pro" data-toggle="tab">快速设定专家</a></li>
             </ul>
             <div class="tab-content mt10">
                 <div class="tab-pane fade active in" id="person-import">
@@ -157,13 +158,118 @@
                                 <input type="file" value="文件上传" />
                             </div>
                             <div class="form-group col-md-12">
-                                <input type="button" class="btn btn-default" value="导入" />
+                                <input type="button" class="btn btn-primary" value="导入" />
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="tab-pane fade" id="person-add">
-                    添加人员tab
+                    <form role="form" action="">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="">姓名<span class="brand-warning">*</span></label>
+                                <input type="text" class="form-control" />
+                                <p class="help-block"><span class="brand-warning">请输入姓名</span></p>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">工号<span class="brand-warning">*</span></label>
+                                <input type="text" class="form-control" />
+                                <p class="help-block"><span class="brand-warning">请输入工号</span></p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">职务<span class="brand-warning">*</span></label>
+                                <select name="kind" id="" class="form-control">
+                                    <option value="">CEO</option>
+                                    <option value="">运维工程师</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="">所属部门<span class="brand-warning">*</span></label>
+                                <select name="kind" id="" class="form-control">
+                                    <option value="">总办</option>
+                                    <option value="">多媒体事业部</option>
+                                </select>
+                                <p class="help-block"><span class="brand-warning">请选择所属部门</span></p>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">手机号码<span class="brand-warning">*</span></label>
+                                <input type="text" class="form-control" />
+                                <p class="help-block"><span class="brand-warning">手机号码格式不正确，请输入手机号码</span></p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">职级<span class="brand-warning">*</span></label>
+                                <select name="kind" id="" class="form-control">
+                                    <option value="">T3</option>
+                                    <option value="">T2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <input type="button" class="btn btn-primary" value="添加" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="person-pro">
+                    <div class="alert alert-warning">
+                          设置专家会有效帮助您的员工更快的找到帮TA解决问题的人。被设定为专家的员工会被优先推荐给有问题的员工  
+                    </div>
+                    <h4>勾选职级快速设定专家</h4>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="" /> 职级名称 
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
             </div>
