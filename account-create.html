@@ -143,19 +143,31 @@
                 <div class="col-lg-12">
                 <div class="panel panel-default">
                 <div class="panel-body">
-                <form role="form" action="">
+                <form role="form" class="form-ac" action="">
                     <div class="row">
-                        <div class="form-group col-md-3">                        
-                            <label>名称<span class="brand-warning">*</span></label>
-                            <input type="text" class="form-control" maxlength="20" />
-                            <p class="help-block"><span class="brand-warning">名称已被占用</span> <span class="brand-warning">请填写名称</span></p>                        
-                            <label>邮箱<span class="brand-warning">*</span></label>
-                            <input type="text" class="form-control" maxlength="20" />
-                            <p class="help-block"><span class="brand-warning">名称已被占用</span> <span class="brand-warning">请填写名称</span></p>
-                            <label>角色<span class="brand-warning">*</span></label>
-                            <select name="" id="" class="form-control">
-                                <option value="企业管理员">企业管理员</option>
-                            </select>
+                        <div class="col-md-3">
+                            <div class="form-group">                        
+                                <label>名称<span class="brand-warning">*</span></label>
+                                <input type="text" name="acName" class="form-control" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>邮箱<span class="brand-warning">*</span></label>
+                                <input type="text" name="acMail" class="form-control" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>角色<span class="brand-warning">*</span></label>
+                                <select name="acRole" id="" class="form-control">
+                                    <option value="企业管理员">企业管理员</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -245,11 +257,58 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- bootstrapValidator JavaScript -->
+    <script src="js/bootstrapValidator.js"></script>
+
+    <!-- bootstrapValidator JavaScript -->
+    <script src="js/zh_CN.js"></script>
+
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+
+    $(document).ready(function() {
+
+        
+        $('.form-ac').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                acName: {
+                    validators: {
+                        notEmpty: {
+                            message : '<span class="brand-warning">请填写名称</span>'
+                        }
+                    }
+                },
+                acMail: {
+                    validators: {
+                        emailAddress: {
+                            message : '<span class="brand-warning">请输入正确的邮箱地址</span>'
+                        }
+                    }
+                },
+                acRole: {
+                    validators: {
+                        notEmpty: {
+                            message : '<span class="brand-warning">请选择角色</span>'
+                        }
+                    }
+                }
+            }
+        });
+
+    });
+
+    </script>
 
 </body>
 
