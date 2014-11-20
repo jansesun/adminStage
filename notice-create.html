@@ -20,6 +20,12 @@
     <!-- MetisMenu CSS -->
     <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- fuelux -->
+    <link href="//www.fuelcdn.com/fuelux/3.2.1/css/fuelux.min.css" rel="stylesheet">
+
+    <!-- timePicker CSS -->
+    <link href="css/plugins/bootstrap-timepicker.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="css/sb-admin-2.css" rel="stylesheet">
 
@@ -147,64 +153,85 @@
                 <div class="col-lg-12">
                 <div class="panel panel-default">
                 <div class="panel-body">
-                <form id="form-notice" role="form" action="">
-                    <div class="row"> 
+                <form id="form-notice" class="form-notice" role="form" action="">
+                    <div class="row">
                         <div class="form-group col-md-3">                    
                             <label>通知类型</label>
-                            <select name="" id="" class="form-control">
+                            <select name="" id="notice-cateOption" class="form-control">
                                 <option value="临时通知">临时通知</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group col-md-3">
-                            <input type="text" class="form-control" maxlength="100" />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <input type="button" class="btn btn-default" value="添加分类" />
+                    <div class="row form-group">
+                        <div class="form-inline col-md-12">
+                            <div id="notice-addCate" class="form-group">
+                                <input type="button" class="btn btn-primary js-notice-cate" value="添加通知类型" />
+                            </div>
+                            <div id="notice-addInput" class="form-group" style="display:none">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <input id="notice-addBtn" type="button" class="btn btn-primary" value="添加" />
+                                    <input type="button" class="btn btn-default js-notice-cate" value="取消" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-3">                    
+                        <div class="form-group col-md-12">                    
                             <label>群发对象<span class="brand-warning">*</span></label>
-                            <select name="" id="" class="form-control">
-                                <option value="">组织结构树</option>
-                            </select>
+                            <div class="input-group">
+                                <!-- 模拟select -->
+                                <div class="btn-group selectlist" data-resize="auto" data-initialize="selectlist" id="selectlistIllustration">
+                                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                                      <span class="selected-label" style="width: 67px;">总办</span>
+                                      <span class="caret"></span>
+                                      <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                      <li data-value="互动娱乐部"><a href="#">公司</a></li>
+                                      <li data-value="互动娱乐部" data-selected="true" style="text-indent:23px"><a href="#">总办</a></li>
+                                      <li data-value="在线视频部" style="text-indent:23px"><a href="#">网络媒体事业群</a></li>
+                                      <li data-value="互动娱乐部" style="text-indent:46px"><a href="#">华东广告拓展一组</a></li>
+                                      <li data-value="在线视频部"><a href="#">社交网络事业群</a></li>
+                                      <li data-value="体育部" data-foo="bar" data-fizz="buzz"><a href="#">合作企业</a></li>
+                                    </ul>
+                                    <input class="hidden hidden-field" name="selectlistIllustrationInput" id="selectlistIllustrationInput" readonly="readonly" aria-hidden="true" type="text">
+                                </div>
+                                <input type="hidden" value="在线视频部" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">                    
+                            <label>发送时间（24小时内）</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="sendTime" type="text" class="form-control" data-minute-step="30" />
+                            </div>
                             <p class="help-block">
                                 <label class="checkbox-inline"><input type="checkbox" checked="checked" /> 接收不成功时转短信发送</label>    
                             </p>
                         </div>
-                        <div class="form-group col-md-2">                    
-                            <label>发送时间</label>
-                            <select name="" id="" class="form-control">
-                                <option value="">立即</option>
-                                <option value="">22日 22:00</option>
-                                <option value="">22日 23:00</option>
-                                <option value="">23日 00:00</option>
-                                <option value="">23日 01:00</option>
-                                <option value="">23日 02:00</option>
-                            </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>通知标题</label>
+                                <input type="text" class="form-control" maxlength="100" value="关于2015年春节放假的通知" />
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-5">
-                            <label>通知标题</label>
-                            <input type="text" class="form-control" maxlength="100" value="关于2015年春节放假的通知" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-5">
-                            <label>通知内容<span class="brand-warning">*</span></label>
-                            <textarea name="" id="" rows="5" class="form-control">天涯有人讨论：如何在X宝买又便宜，质量又好的衣服鞋子？答案来了，关键是看卖家发货地，有人总结了窍门：针织看东莞，韩国大衣看大连，日单韩单看青岛，外贸鞋看惠州，山寨分好坏，好山寨看浙江，烂山寨看广州，转给需要的人，不谢。</textarea>
-                            <p class="help-block">
-                                <span>还可以输入300字</span>   
-                            </p>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>通知内容<span class="brand-warning">*</span></label>
+                                <textarea name="noticeCon" id="" rows="5" class="form-control">天涯有人讨论：如何在X宝买又便宜，质量又好的衣服鞋子？答案来了，关键是看卖家发货地，有人总结了窍门：针织看东莞，韩国大衣看大连，日单韩单看青岛，外贸鞋看惠州，山寨分好坏，好山寨看浙江，烂山寨看广州，转给需要的人，不谢。</textarea>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#dialog-preview">预览</button>
-                            <button type="button" class="btn btn-primary" id="btn-dialog-alert">发布</button>
+                            <button type="submit" class="btn btn-primary" id="btn-dialog-alert">发布</button>
                         </div>
                     </div>   
                 </form>
@@ -262,8 +289,23 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- bootstrapValidator JavaScript -->
+    <script src="js/bootstrapValidator.js"></script>
+
+    <!-- bootstrapValidator JavaScript -->
+    <script src="js/zh_CN.js"></script>
+
+    <!-- fuelux JavaScript -->
+    <script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
+
+    <!-- selectlist JavaScript -->
+    <script src="js/plugins/selectlist.js"></script>
+
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+
+    <!-- timePicker Plugin JavaScript -->
+    <script src="js/plugins/bootstrap-timepicker.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
@@ -276,6 +318,38 @@
     $('#btn-dialog-alert').click(function(){
         $('#dialog-alert').modal('show');
         a();
+    });
+    $(function(){
+        $('.seList').selectlist();
+        $('#sendTime').timepicker();
+        $('.js-notice-cate').click(function(){
+            $('#notice-addCate,#notice-addInput').toggle();
+        });
+        $('#notice-addBtn').click(function(){
+            var opt = $('#notice-addInput input[type="text"]').val();
+            $('#notice-cateOption').append('<option>' + opt + '</option>');
+        });
+        
+        $('.form-notice').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                noticeCon: {
+                    validators: {
+                        notEmpty: {
+                            message : '<span class="brand-warning">通知内容不能为空</span>'
+                        },
+                        stringLength: {
+                            max: 300,
+                            message: '<span class="brand-warning">最多可输入300字</span>'
+                        }
+                    }
+                }
+            }
+        });
     });
     </script>
 
