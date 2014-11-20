@@ -228,9 +228,9 @@
                                     </div>
                                     <div class="col-lg-9 tx_r">
                                         <div class="form-group">
-                                            <input id="dt-sch-name" type="text" placeholder="按照ID或名称关键字、负责人查找" class="form-control" />
+                                            <input id="dt-sch-name" type="text" placeholder="关键字" class="form-control" />
                                         </div>
-                                        <button type="button" class="btn btn-default">查找</button>
+                                        <button id="dt-sch-btn" type="button" class="btn btn-default">查找</button>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -406,8 +406,10 @@
         var table = $('#dataTables-department').DataTable();
         //var nameCol = table.column(colIdx);
         //alert(table.columns().colIdx);
-        $('#dt-sch-name').on('keyup change',function(){
-            table.column('.name').search(this.value).draw();
+        $('#dt-sch-btn').on('click',function(){
+            // table.column('.name').search(this.value).draw();
+            var name = $('#dt-sch-name').val();
+            table.search(name).draw();
         });
 
     });

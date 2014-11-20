@@ -158,15 +158,13 @@
                         <div class="row">
                             <div class="col-lg-12 tx_r">
                                 <div class="form-group">
-                                    <select name="kind" id="" class="form-control">
-                                        <option value="">角色类型</option>
-                                        <option value="">角色名称1</option>
-                                        <option value="">角色名称2</option>
-                                        <option value="">角色名称3</option>
+                                    <select name="noticeCate" id="data-select-cate" class="form-control">
+                                        <option value="">通知类型</option>
+                                        <option value="临时通知">临时通知</option>
                                     </select>
-                                    <input id="dt-sch-name" type="text" placeholder="名称关键字" class="form-control" />
+                                    <input id="dt-sch-name" type="text" placeholder="关键字" class="form-control" />
                                 </div>
-                                <button type="button" class="btn btn-default">查找</button>
+                                <button id="dt-sch-btn" type="button" class="btn btn-default">查找</button>
                             </div>
                         </div>
                         <div class="row">
@@ -176,7 +174,7 @@
                                         <thead>
                                             <tr>
                                                 <th><input type="checkbox" name="table-item" /></th>
-                                                <th>类型</th> 
+                                                <th class="data-select-cate">通知类型</th> 
                                                 <th class="name">标题</th>
                                                 <th width="30%">内容</th>
                                                 <th>作者</th>
@@ -234,7 +232,7 @@
             'ordering' : false,
             'info' : false,
             columns: [
-                { data: null, defaultContent: '', orderable: false },
+                { data: null, defaultContent: "<input type='checkbox' name='table-item' />", orderable: false },
                 { data: "category" },
                 { data: "title" },
                 { data: "content" },
@@ -242,7 +240,7 @@
                 { data: "time" },
                 { data: "object" },
                 { data: "status" },
-                { data: "action" }
+                { data: null, defaultContent: "<a href='###'>转发</a>", orderable: false }
             ],
             'oLanguage' : {
                 'sLengthMenu' : '每页显示 _MENU_ 条记录',
@@ -258,13 +256,24 @@
                 },
                 'sZeroRecords' : '没有检索到数据'
             },
-            'dom' : 'rt<"bottom"flp>'
+            'dom' : 'rt<"bottom"flp>',
+
+            initComplete: function () {
+     
+                $('#data-select-cate').on('change',function(){
+
+                    $('#dataTables-notice').DataTable().column('.' + $(this).attr('id')).search(this.value).draw();
+
+                });
+            }
         });
         var table = $('#dataTables-notice').DataTable();
         //var nameCol = table.column(colIdx);
         //alert(table.columns().colIdx);
-        $('#dt-sch-name').on('keyup change',function(){
-            table.column('.name').search(this.value).draw();
+        $('#dt-sch-btn').on('click',function(){
+            // table.column('.name').search(this.value).draw();
+            var name = $('#dt-sch-name').val();
+            table.search(name).draw();
         });
     });
     </script>

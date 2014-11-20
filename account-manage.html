@@ -167,9 +167,9 @@
                                         <option value="正常">正常</option>
                                         <option value="冻结">冻结</option>
                                     </select>
-                                    <input id="dt-sch-name" type="text" placeholder="名称关键字" class="form-control" />
+                                    <input id="dt-sch-name" type="text" placeholder="关键字" class="form-control" />
                                 </div>
-                                <button type="button" class="btn btn-default">查找</button>
+                                <button id="dt-sch-btn" type="button" class="btn btn-default">查找</button>
                             </div>
                         </div>
                     </div>
@@ -264,8 +264,10 @@
         var table = $('#dataTables-account').DataTable();
         //var nameCol = table.column(colIdx);
         //alert(table.columns().colIdx);
-        $('#dt-sch-name').on('keyup change',function(){
-            table.column('.name').search(this.value).draw();
+        $('#dt-sch-btn').on('click',function(){
+            // table.column('.name').search(this.value).draw();
+            var name = $('#dt-sch-name').val();
+            table.search(name).draw();
         });
     });
     </script>

@@ -337,9 +337,9 @@
                                     <option value="在线视频部">在线视频部</option>
                                     <option value="多媒体事业部">多媒体事业部</option>
                                 </select>
-                                <input id="dt-sch-name" type="text" placeholder="按姓名查找" class="form-control"/>
+                                <input id="dt-sch-name" type="text" placeholder="关键字" class="form-control"/>
                             </div>
-                            <button type="button" class="btn btn-default">查找</button>
+                            <button id="dt-sch-btn" type="button" class="btn btn-default">查找</button>
                         </div>
                     </div>
                     <div class="row">
@@ -588,9 +588,10 @@
         var table = $('#dataTables-person').DataTable();
         //var nameCol = table.column(colIdx);
         //alert(table.columns().colIdx);
-
-        $('#dt-sch-name').on('keyup change',function(){
-            table.column('.name').search(this.value).draw();
+        $('#dt-sch-btn').on('click',function(){
+            // table.column('.name').search(this.value).draw();
+            var name = $('#dt-sch-name').val();
+            table.search(name).draw();
         });
     });
     </script>
