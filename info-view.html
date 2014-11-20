@@ -144,12 +144,12 @@
                 <div class="col-lg-12">
                 <div class="panel panel-default">
                 <div class="panel-body">
-                <form role="form" class="form-info" action="info-view.html">
+                <div class="form-info">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">                        
                                 <label>公司名称<span class="brand-warning">*</span></label>
-                                <input type="text" name="infoName" class="form-control" maxlength="20" />
+                                <div>北京时代光华股份有限公司</div>
                             </div>
                         </div>
                     </div>
@@ -157,16 +157,13 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label>联系电话</label>
-                                <input type="text" class="form-control" maxlength="15" />
+                                <div>010-73637232</div>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">                    
                                 <label>行业类型<span class="brand-warning">*</span></label>
-                                <select name="infoKind" id="" class="form-control">
-                                    <option value="">-</option>
-                                    <option value="金融">金融</option>
-                                </select>
+                                <div>教育培训</div>
                             </div>
                         </div>
                     </div>
@@ -182,18 +179,18 @@
                         <div class="col-md-4">
                             <div class="form-group">                        
                                 <label>通讯地址</label>
-                                <input type="text" class="form-control" />
+                                <div>北京市海淀区软件园东路123号</div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">保存</button>
+                                <a href="info-edit.html" class="btn btn-primary">修改</a>
                             </div>
                         </div>
                     </div>   
-                </form>
+                </div>
                 </div>
                 </div>
                 </div>
@@ -210,51 +207,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- bootstrapValidator JavaScript -->
-    <script src="js/bootstrapValidator.js"></script>
-
-    <!-- bootstrapValidator JavaScript -->
-    <script src="js/zh_CN.js"></script>
-
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-
-    $(document).ready(function() {
-
-        
-        $('.form-info').bootstrapValidator({
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                infoName: {
-                    validators: {
-                        notEmpty: {
-                            message : '<span class="brand-warning">请填写公司名称</span>'
-                        }
-                    }
-                },
-                infoKind: {
-                    validators: {
-                        notEmpty: {
-                            message : '<span class="brand-warning">请选择行业类型</span>'
-                        }
-                    }
-                }
-            }
-        });
-
-    });
-
-    </script>
 
 </body>
 
