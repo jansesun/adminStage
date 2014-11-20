@@ -52,9 +52,7 @@
 }
 .icoplace {
   width: 40px;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+  display: none;
   text-align: center;
 }
 body {
@@ -146,7 +144,7 @@ body {
   border-bottom: none !important;
 }
 .sidebar .nav-second-level li a {
-  padding-left: 55px;
+  padding-left: 25px;
 }
 .sidebar .nav-third-level li a {
   padding-left: 52px;
