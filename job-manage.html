@@ -153,29 +153,33 @@
                 <div class="col-lg-12">
 
                 <div class="panel panel-default">
-                <div class="panel-heading">
-                    添加部门
-                </div>
                 <div class="panel-body">
-                <form role="form" class="form-job" action="">
-                    <div class="col-md-3">
-                        <div class="form-group">                   
-                            <label>职务名称<span class="brand-warning">*</span></label>
-                            <input type="text" name="jbName" class="form-control" maxlength="100" />
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#job-add" data-toggle="tab">添加职务</a></li>
+                    </ul>
+                    <div class="tab-content mt10">
+                        <div class="tab-pane fade active in" id="job-add">
+                            <form role="form" class="form-job" action="">
+                                <div class="col-md-3">
+                                    <div class="form-group">                   
+                                        <label>职务名称<span class="brand-warning">*</span></label>
+                                        <input type="text" name="jbName" class="form-control" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">                    
+                                        <label>职务描述</label>
+                                        <input type="text" class="form-control" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-primary" value="添加" />
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group">                    
-                            <label>职务描述</label>
-                            <input type="text" class="form-control" maxlength="100" />
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="添加" />
-                        </div>
-                    </div>
-                </form>
                 </div>
                 </div>
 
