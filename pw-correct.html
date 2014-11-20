@@ -135,7 +135,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header tx_yh">信息管理</h1>
+                    <h1 class="page-header tx_yh">修改密码</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -146,50 +146,33 @@
                 <div class="panel-body">
                 <form role="form" class="form-info" action="">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">                        
-                                <label>名称<span class="brand-warning">*</span></label>
-                                <input type="text" name="infoName" class="form-control" maxlength="20" />
+                                <label>旧密码</label>
+                                <input type="password" data-bv-stringlength="true" data-bv-stringlength-max="22" data-bv-stringlength-min="6" name="pwOld" class="form-control" maxlength="22" />
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <label>联系电话</label>
-                                <input type="text" class="form-control" maxlength="15" />
+                                <label>新密码</label>
+                                <input type="password" data-bv-stringlength="true" data-bv-stringlength-max="22" data-bv-stringlength-min="6" name="pwNew" class="form-control" maxlength="22" />
                             </div>
                         </div>
-                        <div class="col-md-2">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
                             <div class="form-group">                    
-                                <label>行业类型<span class="brand-warning">*</span></label>
-                                <select name="infoKind" id="" class="form-control">
-                                    <option value="">-</option>
-                                    <option value="金融">金融</option>
-                                </select>
+                                <label>确认密码</label>
+                                <input type="password" data-bv-stringlength="true" data-bv-stringlength-max="22" data-bv-stringlength-min="6" name="pwRep" class="form-control" maxlength="22" />
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <label>E-mail</label>
-                                <p>index.aspx@163.com</p>
-                            </div>
-                        </div>
-                    </div>   
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">                        
-                                <label>通讯地址</label>
-                                <input type="text" class="form-control" maxlength="100" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">保存</button>
+                                <button type="submit" class="btn btn-primary">确定</button>
                             </div>
                         </div>
                     </div>   
@@ -235,17 +218,41 @@
                 validating: 'glyphicon glyphicon-refresh'
             },
             fields: {
-                infoName: {
+                pwOld: {
                     validators: {
                         notEmpty: {
-                            message : '<span class="brand-warning">请填写公司名称</span>'
+                            message : '<span class="brand-warning">请输入旧密码</span>'
+                        },
+                        stringLength: {
+                            message : '密码长度在6~22位之间'
                         }
                     }
                 },
-                infoKind: {
+                pwNew: {
                     validators: {
                         notEmpty: {
-                            message : '<span class="brand-warning">请选择行业类型</span>'
+                            message : '<span class="brand-warning">请输入新密码</span>'
+                        },
+                        stringLength: {
+                            message : '密码长度在6~22位之间'
+                        },
+                        identical: {
+                            field: 'pwRep',
+                            message: '密码不一致'
+                        }
+                    }
+                },
+                pwRep: {
+                    validators: {
+                        notEmpty: {
+                            message : '<span class="brand-warning">请重复新密码</span>'
+                        },
+                        stringLength: {
+                            message : '密码长度在6~22位之间'
+                        },
+                        identical: {
+                            field: 'pwNew',
+                            message: '密码不一致'
                         }
                     }
                 }

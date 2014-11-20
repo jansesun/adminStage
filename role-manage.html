@@ -34,7 +34,8 @@
     <![endif]-->
 
     <style>
-    #dataTables-role_filter{ display:none}
+    #dataTables-role_filter,
+    #dataTables-role_length{ display:none}
     </style>
 
 </head>
@@ -149,10 +150,13 @@
                 <div class="panel panel-default">
                 <div class="panel-body">
                 <form role="form" action="">
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-lg-4 col-lg-offset-5">
-                                <input id="dt-sch-name" type="text" placeholder="名称关键字" class="form-control">
+                    <div class="row">
+                        <div class="col-lg-4 col-lg-offset-5">
+                            <div class="form-inline tx_r">
+                                <div class="form-group">
+                                    <input id="dt-sch-name" type="text" placeholder="名称关键字" class="form-control" />
+                                </div>
+                                <button type="button" class="btn btn-default">查找</button>
                             </div>
                         </div>
                     </div>
@@ -165,7 +169,6 @@
                                             <th class="name">角色名称</th>
                                             <th>权限</th>
                                             <th>创建时间</th>
-                                            <th>备注</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
@@ -174,9 +177,8 @@
                                             <td>角色名称1</td>
                                             <td>增删改</td>
                                             <td>2014-11-11 20:00:00</td>
-                                            <td>无</td>
                                             <td>
-                                                <a href="#">编辑</a>
+                                                <a class="mr10" href="#">编辑</a>
                                                 <a href="#">删除</a>
                                             </td>
                                         </tr>
@@ -184,9 +186,8 @@
                                             <td>角色名称2</td>
                                             <td>增删改</td>
                                             <td>2014-11-11 20:00:00</td>
-                                            <td>无</td>
                                             <td>
-                                                <a href="#">编辑</a>
+                                                <a class="mr10" href="#">编辑</a>
                                                 <a href="#">删除</a>
                                             </td>
                                         </tr>
@@ -194,9 +195,8 @@
                                             <td>角色名称3</td>
                                             <td>增删改</td>
                                             <td>2014-11-11 20:00:00</td>
-                                            <td>无</td>
                                             <td>
-                                                <a href="#">编辑</a>
+                                                <a class="mr10" href="#">编辑</a>
                                                 <a href="#">删除</a>
                                             </td>
                                         </tr>

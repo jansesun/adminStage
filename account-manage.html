@@ -149,21 +149,24 @@
                 <div class="panel panel-default">
                 <div class="panel-body">
                 <form role="form" action="">
-                    <div class="form-group">
+                    <div class="form-inline">
                         <div class="row">
                             <div class="col-lg-3">
-                                <input class="btn btn-default" type="button" value="导出帐号" />
+                                <div class="form-group">
+                                    <input class="btn btn-default" type="button" value="导出帐号" />
+                                </div>
                             </div>
-                            <div class="col-lg-2">
-                                <select name="kind" id="" class="form-control">
-                                    <option value="">角色类型</option>
-                                    <option value="">角色名称1</option>
-                                    <option value="">角色名称2</option>
-                                    <option value="">角色名称3</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-4">
-                                <input id="dt-sch-name" type="text" placeholder="名称关键字" class="form-control">
+                            <div class="col-lg-6 tx_r">
+                                <div class="form-group">
+                                    <select name="kind" id="" class="form-control">
+                                        <option value="">角色类型</option>
+                                        <option value="">角色名称1</option>
+                                        <option value="">角色名称2</option>
+                                        <option value="">角色名称3</option>
+                                    </select>
+                                    <input id="dt-sch-name" type="text" placeholder="名称关键字" class="form-control" />
+                                </div>
+                                <button type="button" class="btn btn-default">查找</button>
                             </div>
                         </div>
                     </div>
@@ -192,7 +195,10 @@
                                             <td>2011-1-11 1:11:00</td>
                                             <td>展示</td>
                                             <td>标注</td>
-                                            <td><a href="###">编辑</a> <a href="###">开启</a></td>
+                                            <td>
+                                                <a class="mr10" href="#">编辑</a>
+                                                <a href="#">开启</a>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -299,108 +299,126 @@
             <div class="panel panel-default">
             <div class="panel-body">
             <form role="form" action="">
-                <div class="row">
-                    <div class="form-group col-lg-2">
-                        <input class="btn btn-default" type="button" value="导出" />
-                    </div>
-                    <div class="form-group col-lg-2">
-                        <select name="kind" id="data-select-job" class="form-control">
-                            <option value="">职务</option>
-                            <option value="CEO">CEO</option>
-                            <option value="运维工程师">运维工程师</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-lg-2">
-                        <select name="kind" id="data-select-department" class="form-control">
-                            <option value="">部门</option>
-                            <option value="在线视频部">在线视频部</option>
-                            <option value="多媒体事业部">多媒体事业部</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-lg-3">
-                        <input id="dt-sch-name" type="text" placeholder="按姓名查找" class="form-control">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-person">
-                                <thead>
-                                    <tr>
-                                        <th><input type="checkbox" name="table-item" /></th>
-                                        <th class="workId">工号</th>
-                                        <th class="name">姓名</th>
-                                        <th class="data-select-job">职务</th>
-                                        <th class="data-select-department">所属部门</th>
-                                        <th>联系方式</th>
-                                        <th>分机</th>
-                                        <th>E-mail</th>
-                                        <th>操作</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" name="table-item" /></td>
-                                        <td>110</td>
-                                        <td>张三</td>
-                                        <td>运维工程师</td>
-                                        <td>多媒体事业部</td>
-                                        <td>56038969</td>
-                                        <td>11000</td>
-                                        <td>index@163.com</td>
-                                        <td><a href="###">编辑</a> <a href="###">开启</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" name="table-item" /></td>
-                                        <td>110</td>
-                                        <td>张三</td>
-                                        <td>CEO</td>
-                                        <td>多媒体事业部</td>
-                                        <td>56038969</td>
-                                        <td>11000</td>
-                                        <td>index@163.com</td>
-                                        <td><a href="###">编辑</a> <a href="###">开启</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" name="table-item" /></td>
-                                        <td>110</td>
-                                        <td>张三</td>
-                                        <td>CEO</td>
-                                        <td>多媒体事业部</td>
-                                        <td>56038969</td>
-                                        <td>11000</td>
-                                        <td>index@163.com</td>
-                                        <td><a href="###">编辑</a> <a href="###">开启</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" name="table-item" /></td>
-                                        <td>110</td>
-                                        <td>张三</td>
-                                        <td>CEO</td>
-                                        <td>在线视频部</td>
-                                        <td>56038969</td>
-                                        <td>11000</td>
-                                        <td>index@163.com</td>
-                                        <td><a href="###">编辑</a> <a href="###">开启</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" name="table-item" /></td>
-                                        <td>110</td>
-                                        <td>张三</td>
-                                        <td>CEO</td>
-                                        <td>多媒体事业部</td>
-                                        <td>56038969</td>
-                                        <td>11000</td>
-                                        <td>index@163.com</td>
-                                        <td><a href="###">编辑</a> <a href="###">开启</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div class="form-inline">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <input class="btn btn-default" type="button" value="导出" />
+                            </div>
                         </div>
-                        <!-- /.table-responsive -->
+                        <div class="col-lg-7 tx_r">
+                            <div class="form-group">
+                                <select name="kind" id="data-select-job" class="form-control">
+                                    <option value="">职务</option>
+                                    <option value="CEO">CEO</option>
+                                    <option value="运维工程师">运维工程师</option>
+                                </select>
+                                <select name="kind" id="data-select-department" class="form-control">
+                                    <option value="">部门</option>
+                                    <option value="在线视频部">在线视频部</option>
+                                    <option value="多媒体事业部">多媒体事业部</option>
+                                </select>
+                                <input id="dt-sch-name" type="text" placeholder="按姓名查找" class="form-control"/>
+                            </div>
+                            <button type="button" class="btn btn-default">查找</button>
+                        </div>
                     </div>
-                    <div class="col-lg-9">
-                        <button type="submit" class="btn btn-primary">删除</button>
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-person">
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" name="table-item" /></th>
+                                            <th class="workId">工号</th>
+                                            <th class="name">姓名</th>
+                                            <th class="data-select-job">职务</th>
+                                            <th class="data-select-department">所属部门</th>
+                                            <th>联系方式</th>
+                                            <th>分机</th>
+                                            <th>E-mail</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" name="table-item" /></td>
+                                            <td>110</td>
+                                            <td>张三</td>
+                                            <td>运维工程师</td>
+                                            <td>多媒体事业部</td>
+                                            <td>56038969</td>
+                                            <td>11000</td>
+                                            <td>index@163.com</td>
+                                            <td>
+                                                <a class="mr10" href="#">编辑</a>
+                                                <a href="#">开启</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="table-item" /></td>
+                                            <td>110</td>
+                                            <td>张三</td>
+                                            <td>CEO</td>
+                                            <td>多媒体事业部</td>
+                                            <td>56038969</td>
+                                            <td>11000</td>
+                                            <td>index@163.com</td>
+                                            <td>
+                                                <a class="mr10" href="#">编辑</a>
+                                                <a href="#">开启</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="table-item" /></td>
+                                            <td>110</td>
+                                            <td>张三</td>
+                                            <td>CEO</td>
+                                            <td>多媒体事业部</td>
+                                            <td>56038969</td>
+                                            <td>11000</td>
+                                            <td>index@163.com</td>
+                                            <td>
+                                                <a class="mr10" href="#">编辑</a>
+                                                <a href="#">开启</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="table-item" /></td>
+                                            <td>110</td>
+                                            <td>张三</td>
+                                            <td>CEO</td>
+                                            <td>在线视频部</td>
+                                            <td>56038969</td>
+                                            <td>11000</td>
+                                            <td>index@163.com</td>
+                                            <td>
+                                                <a class="mr10" href="#">编辑</a>
+                                                <a href="#">开启</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="table-item" /></td>
+                                            <td>110</td>
+                                            <td>张三</td>
+                                            <td>CEO</td>
+                                            <td>多媒体事业部</td>
+                                            <td>56038969</td>
+                                            <td>11000</td>
+                                            <td>index@163.com</td>
+                                            <td>
+                                                <a class="mr10" href="#">编辑</a>
+                                                <a href="#">开启</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <div class="col-lg-9">
+                            <button type="submit" class="btn btn-primary">删除</button>
+                        </div>
                     </div>
                 </div>          
             </form>
