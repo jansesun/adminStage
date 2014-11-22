@@ -312,7 +312,7 @@
     <script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
 
     <!-- selectlist JavaScript -->
-    <script src="js/plugins/metisMenu/selectlist.js"></script>
+    <script src="js/plugins/selectlist.js"></script>
 
     <!-- bootstrapValidator JavaScript -->
     <script src="js/bootstrapValidator.js"></script>
@@ -325,8 +325,8 @@
 
     <!-- DataTables JavaScript -->
     <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="js/plugins/dataTables/dataTables.tableTools.min.js"></script>
-    <script src="js/plugins/dataTables/dataTables.editor.min.js"></script>
+    <!-- script src="js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    <script src="js/plugins/dataTables/dataTables.editor.min.js"></script -->
 
     <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
@@ -335,6 +335,8 @@
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
+        
+    // var editor;
 
     $(document).ready(function() {
 
@@ -371,7 +373,30 @@
             'info' : false,
             columns: [
                 { data: "dpName" },
-                { data: "dpSelect" },
+                {
+                    data: null,
+                    defaultContent : '\
+                    <div class="input-group"> \
+                        <div class="btn-group selectlist" data-resize="auto" data-initialize="selectlist" id="selectlistIllustration"> \
+                            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"> \
+                              <span class="selected-label" style="width: 67px;">总办</span> \
+                              <span class="caret"></span> \
+                              <span class="sr-only">Toggle Dropdown</span> \
+                            </button> \
+                            <ul class="dropdown-menu" role="menu"> \
+                              <li data-value="互动娱乐部"><a href="#">公司</a></li> \
+                              <li data-value="互动娱乐部" data-selected="true" style="text-indent:23px"><a href="#">总办</a></li> \
+                              <li data-value="在线视频部" style="text-indent:23px"><a href="#">网络媒体事业群</a></li> \
+                              <li data-value="互动娱乐部" style="text-indent:46px"><a href="#">华东广告拓展一组</a></li> \
+                              <li data-value="在线视频部"><a href="#">社交网络事业群</a></li> \
+                              <li data-value="体育部" data-foo="bar" data-fizz="buzz"><a href="#">合作企业</a></li> \
+                            </ul> \
+                            <input class="hidden hidden-field" name="selectlistIllustrationInput" id="selectlistIllustrationInput" readonly="readonly" aria-hidden="true" type="text"> \
+                        </div> \
+                        <input type="hidden" value="在线视频部" /> \
+                    </div>',
+                    orderable : false
+                },
                 { data: "dpNote" },
                 { data: null, defaultContent: "<a class='mr10' href='###'>保存</a> <a href='###'>删除</a>", orderable: false }
             ],
@@ -391,26 +416,23 @@
             },
             'dom' : 'rt<"bottom"flp>'
         });
-        
-        var editor;
 
-        editor = new $.fn.dataTable.Editor({
-            ajax: "data-department.json",
-            table: "#dataTables-department",
-            fields: [ {
-                    label: "部门名称",
-                    name: "dpName"
-                }, {
-                    label: "备注",
-                    name: "dpNote"
-                }
-            ]
-        });
+        // editor = new $.fn.dataTable.Editor({
+        //     ajax: "data-department.json",
+        //     table: "#dataTables-department",
+        //     fields: [ {
+        //             label: "部门名称",
+        //             name: "dpName"
+        //         }, {
+        //             label: "备注",
+        //             name: "dpNote"
+        //         }
+        //     ]
+        // });
 
-        $('#dataTables-department').on( 'click', 'tbody td:not(:last-child)', function (e) {
-            alert(1);
-            editor.inline(this);
-        } );
+        // $('#dataTables-department').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        //     editor.inline(this);
+        // } );
 
         var table = $('#dataTables-department').DataTable();
         //var nameCol = table.column(colIdx);
