@@ -94,7 +94,16 @@
     $(function(){
         var login = $('#login'),
             email = $('#email'),
-            password = $('#password');
+            password = $('#password'),
+            cookie = function(n, v, d) {
+                var k = '', D;
+                if (d) {
+                    D = new Date();
+                    D.setTime(D.getTime() + d * 24 * 60 * 60 * 1000);
+                    k = '; expires=' + D.toGMTString();
+                }
+                document.cookie = n + '=' + v + k + '; path=/';
+            };
         login.on('click', function() {
             var data = {
                 admin_name: email.val(),
@@ -108,6 +117,7 @@
                 success: function(data) {
                     if(data.result === 'SUCC') {
                         // 注入cookie
+                        cookie('x-session-key', data.session_key, 7);
                         // 刷新页面
                         location.href = location.origin + '/adminStage/person-manage.html';
                     } else {
