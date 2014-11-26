@@ -117,7 +117,7 @@
                 success: function(data) {
                     if(data.result === 'SUCC') {
                         // 注入cookie
-                        cookie('x-session-key', data.session_key, 7);
+                        cookie('x-session-key', data.session_key, 0.25);
                         // 刷新页面
                         location.href = location.origin + '/adminStage/person-manage.html';
                     } else {
